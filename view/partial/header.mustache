@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../public/css/home.css">
+    <title>Questionario</title>
+</head>
+<body>
+<header class="header-home">
+    <div class="questionario">
+        <a class="a-header-questionario" href="/home"><img src="../public/images/LOGO.png" alt="LOGO" class="logo" width="250em"></a>
+        <button class="hamburger-button">
+            ☰
+        </button>
+    </div>
+    <div class="header-right">
+        {{#numeroRanking}}
+        <div class="ranking">
+            <h4>N° Ranking</h4>
+            <p>{{numeroRanking}}</p>
+        </div>
+        {{/numeroRanking}}
+        <div class="busqueda">
+            <form class="form" action="/user/buscarPerfil?numeroDePagina=1" method="post">
+                <input type="text" class="buscador" placeholder="buscar usuarios..." id="username" name="username">
+                <input class="botonConfirmar" type="submit" value="Buscar">
+            </form>
+        </div>
+        <div class="perfil">
+                <a href="/user/mostrarPerfil?user={{username}}"><img class="pfp" src="../{{image}}" alt=""></a>
+                <a class="username" href="/user/mostrarPerfil?user={{username}}">{{username}}</a>
+        </div>
+
+    </div>
+</header>
+<script src="../public/js/header.js"></script>

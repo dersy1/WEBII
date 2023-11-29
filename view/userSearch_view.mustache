@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="../public/css/userSerch.css">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiq3xISXSZYgkd9GDAOdajy4NK2d3L7dY&callback=initMap" async defer></script>
+<div class="tabla">
+    <table class="usuarioBuscado">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Nombre</th>
+            <th>Partidas Jugadas</th>
+            <th>Puntaje</th>
+            <th>Ver Perfil</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#resultadoBusqueda}}
+            <tr>
+                <td><a href="/user/mostrarPerfil?user={{username}}">{{username}}</a></td>
+                <td><a href="/user/mostrarPerfil?user={{username}}">{{name}}</a></td>
+                <td><a href="/user/mostrarPerfil?user={{username}}">{{partidasRealizadas}}</a></td>
+                <td><a href="/user/mostrarPerfil?user={{username}}">{{puntaje}}</a></td>
+                <td class="tdBoton"><a href="/user/mostrarPerfil?user={{username}}"><button class="boton-activo" >Ver</button></td>
+            </tr>
+        {{/resultadoBusqueda}}
+        </tbody>
+    </table>
+</div>
+<div class="botones-busqueda-div">
+    {{#anterior}}
+        <form class="form" action="/user/buscarPerfil?numeroDePagina={{anterior}}" method="post">
+            <input type="hidden" name="username" value="{{usuarioBuscado}}">
+            <input class="busqueda-boton" type="submit" value="Anterior">
+        </form>
+    {{/anterior}}
+    {{#siguiente}}
+        <form class="form" action="/user/buscarPerfil?numeroDePagina={{siguiente}}" method="post">
+            <input type="hidden" name="username" value="{{usuarioBuscado}}">
+            <input class="busqueda-boton" type="submit" value="Siguiente">
+        </form>
+    {{/siguiente}}
+</div>
+

@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="../public/css/game.css">
+
+<div class="todo-div">
+    <div class="tiempo">
+        <h4>10</h4>
+    </div>
+{{#categoria}}
+    <div class="div" style="background-color: {{color}}">
+{{/categoria}}
+        <h1 class="preg">
+            {{pregunta.enunciado}}
+        </h1>
+    </div>
+    <div class="botones-div">
+        {{#respuestas}}
+            <form method="POST" action="/game/verificarRespuesta">
+                <input type="hidden" name="id_partida" value="{{partida}}">
+                <input type="hidden" name="id_pregunta" value="{{pregunta.id}}">
+                <input type="hidden" name="bool" value="{{es_correcta}}">
+                <input type="hidden" name="URL" value="true">
+                <button type="submit" class="boton-game"> {{texto}} </button>
+            </form>
+        {{/respuestas}}
+    </div>
+    {{#trampitas}}
+    <form method="POST" action="/game/verificarRespuesta">
+        <input type="hidden" name="id_partida" value="{{partida}}">
+        <input type="hidden" name="id_pregunta" value="{{pregunta.id}}">
+        <input type="hidden" name="trampita" value="true">
+        <input type="hidden" name="URL" value="true">
+        <button type="submit" class="boton-game saltar"> Saltear pregunta <br> {{trampitas}} usos </button>
+    </form>
+    {{/trampitas}}
+
+        <input type="hidden" id="id_pregunta" value="{{pregunta.id}}">
+        <button class="reportar" type="button" id="reportar" name="reportar">Reportar</button>
+</div>
+
+<input type="hidden" id="partida" name="partida" value="{{partida}}">
+
+<script type="text/javascript" src="../public/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../public/js/game.js"></script>

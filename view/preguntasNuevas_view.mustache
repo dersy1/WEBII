@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="../public/css/tablas.css">
+<table class="preguntas">
+    <thead>
+    <tr>
+        <th>Pregunta</th>
+        <th>Respuestas</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#preguntasConRespuestas}}
+        <tr>
+            <td>{{pregunta.enunciado}}</td>
+            <td>
+                {{#respuestas}}
+                    {{^es_correcta}}
+                        <p class="red">{{texto}}</p>
+                    {{/es_correcta}}
+                    {{#es_correcta}}
+                        <p class="green">{{texto}}</p>
+                    {{/es_correcta}}
+                {{/respuestas}}
+            </td>
+            <form action="/editor/eliminarAgregarNuevas" method="POST">
+                <input type="hidden" name="pregunta_id" value="{{pregunta.id}}">
+                <td><button type="submit" name="eliminar" value="eliminar" class="boton2">Eliminar</button></td>
+                <td><button type="submit" name="agregar" value="agregar" class="boton2">Agregar</button></td>
+            </form>
+        </tr>
+    {{/preguntasConRespuestas}}
+    </tbody>
+</table>
+<table class="preguntas">
+    <thead>
+    <tr>
+        <th>Categorias</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#categoriasNuevas}}
+        <tr>
+            <td>{{nombre}}</td>
+            <td></td>
+            <form action="/editor/eliminarAgregarNuevasCategorias" method="POST">
+                <input type="hidden" name="id" value="{{id}}">
+                <td><button type="submit" name="eliminar" value="eliminar" class="boton2">Eliminar</button></td>
+                <td><button type="submit" name="agregar" value="agregar" class="boton2">Agregar</button></td>
+            </form>
+        </tr>
+    {{/categoriasNuevas}}
+
+    </tbody>
+</table>

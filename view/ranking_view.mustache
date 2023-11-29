@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="../public/css/ranking.css">
+
+<script type="text/javascript" src="../public/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../public/js/ranking.js"></script>
+
+<div class="contRanking">
+    <div class="rankingGeneral">
+        <h3>Ranking Mundial</h3>
+        <table id="tablaRanking">
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>Puntos</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="historialPartidas">
+        <h3>Historial de partidas</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>Puntos</th>
+                <th>Fecha</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#partidas}}
+                <tr>
+                    <td><a href="/user/mostrarPerfil?user={{username}}">{{username}}</a></td>
+                    <td>{{puntaje}}</td>
+                    <td>{{tiempo}}</td>
+                </tr>
+            {{/partidas}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+

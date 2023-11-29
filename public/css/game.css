@@ -1,0 +1,124 @@
+.boton-game{
+    padding:1rem 4rem;
+    font-size:1.5rem;
+    margin:1rem;
+    border-radius:15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #252525;
+    border: 2px solid #945bc9;
+    width:100%;
+    text-align: center;
+}
+.boton-game:hover {
+    background-color: #100f0f;
+    cursor:pointer;
+}
+.todo-div {
+    height:90vh;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+}
+.preg{
+    color: #ece3e3;
+}
+.botones-div{
+    width:50%;
+}
+.div{
+    width: 80%;
+    padding-bottom: 5em;
+    padding-top: 5em;
+    text-align: center;
+    margin: 1em 2em 2em 2em;
+    border-radius: 20px;
+    border: 5px solid #ffffff;
+}
+.center-mid{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    height:90vh;
+}
+.cartelPerdiste{
+
+}
+
+.tiempo {
+    border: 2px solid #945bc9;
+    border-radius:5px;
+    padding:10px 15px;
+    margin-top:15px;
+}
+
+.reportar {
+    padding:1rem 2rem;
+    background-color: #252525;
+    border: 2px solid #945bc9;
+    border-radius:5px;
+    margin:0px auto;
+    transform: translate(10%, 0%);
+}
+
+.reportar:hover {
+    cursor:pointer;
+    background-color: #3d3d3d;
+}
+
+@media screen and (max-width: 1270px) {
+    .boton-game {
+        width: 100%;
+        height:100%;
+    }
+
+    .botones-div{
+        max-width: 100%;
+        margin: 0 auto;
+        transform: translate(-5%, 0%);
+    }
+
+    .saltar {
+        width: 100%;
+        height:100%;
+        margin: 0 auto;
+        transform: translate(0%, 0%);
+    }
+
+    .reportar {
+        margin: 10px auto;
+        transform: translate(-5%, 0%);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .boton-game, .preg {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .botones-div{
+        max-width: 150%;
+        margin: 0 auto;
+        transform: translate(-34%, 0%);
+    }
+
+    .boton-game {
+        width: 150%;
+    }
+
+    .saltar {
+        width: 100%;
+        height:100%;
+        margin: 0 auto;
+        transform: translate(0%, 0%);
+    }
+
+    .reportar {
+        margin: 10px auto;
+        transform: translate(-4%, 0%);
+    }
+}
+
+
